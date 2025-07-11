@@ -6,72 +6,45 @@
   <title>Little Bike Communications</title>
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
+      margin: 0; padding: 0;
+      width: 100vw; height: 100vh;
       font-family: sans-serif;
     }
-    /* Hero background */
     .hero {
       position: relative;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       background: url('lbc_background.png') no-repeat center center;
       background-size: contain;
       background-color: #fff;
     }
-
-    /* Contact bar */
     .contact {
       position: absolute;
-      bottom: 20px;
-      left: 50%;
+      bottom: 20px; left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      gap: 16px;
+      display: flex; gap: 16px;
       background: rgba(255,255,255,0.8);
       padding: 8px 16px;
       border-radius: 24px;
       align-items: center;
     }
     .contact a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #333;
+      display: flex; align-items: center;
+      text-decoration: none; color: #333;
       font-size: 14px;
     }
-    .contact svg {
-      width: 20px;
-      height: 20px;
+    .contact img {
+      width: 20px; height: 20px;
       margin-right: 6px;
-      fill: #333;
     }
-
-    /* Tablet: shrink bar */
     @media (max-width: 768px) {
-      .contact {
-        bottom: 10px;
-        gap: 12px;
-        padding: 6px 12px;
-      }
-      .contact a {
-        font-size: 12px;
-      }
-      .contact svg {
-        width: 18px;
-        height: 18px;
-      }
+      .contact { bottom: 10px; gap: 12px; padding: 6px 12px; }
+      .contact a { font-size: 12px; }
+      .contact img { width: 18px; height: 18px; }
     }
-
-    /* Phone: stack icons, no text */
     @media (max-width: 480px) {
       .contact {
-        flex-direction: column;
-        bottom: 8px;
-        gap: 8px;
-        padding: 4px 8px;
+        flex-direction: column; bottom: 8px;
+        gap: 8px; padding: 4px 8px;
       }
       .contact a span { display: none; }
     }
@@ -80,19 +53,19 @@
 <body>
   <div class="hero">
     <div class="contact">
-      <!-- Phone -->
-      <a href="tel:+61412345678">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.36 11.36 0 003.58.57 1 1 0 011 1v3.75a1 1 0 01-1 1A17.94 17.94 0 013 5a1 1 0 011-1h3.75a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
-        <span>+61 412 345 678</span>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/61437189338" target="_blank">
+        <img src="icons/whatsapp.svg" alt="WhatsApp">
+        <span>+61 437 189 338</span>
       </a>
       <!-- Email -->
       <a href="mailto:hello@littlebike.com.au">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/></svg>
+        <img src="icons/email.svg" alt="Email">
         <span>hello@littlebike.com.au</span>
       </a>
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/company/littlebike" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 007.5 6a2.5 2.5 0 002.52-2.5A2.5 2.5 0 007.5 1.5a2.47 2.47 0 00-2.52 2zM2 8h5v14H2zm7 0h4.8v2h.1a5.28 5.28 0 014.8-2.6c5.12 0 6.06 3.36 6.06 7.68V22H18v-7c0-1.68-.03-3.84-2.4-3.84-2.4 0-2.76 1.86-2.76 3.72V22H9z"/></svg>
+        <img src="icons/linkedin.svg" alt="LinkedIn">
         <span>LinkedIn</span>
       </a>
     </div>
