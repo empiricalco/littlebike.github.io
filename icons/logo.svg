@@ -384,10 +384,6 @@
      id="layer-MC0"
      transform="translate(-9141.9863,-205.33281)">
     <path
-       id="path283"
-       d="M 8751.7702,768 H 10191.422 V 1.92e-5 H 8751.7702 Z"
-       style="fill:#b2d2e9 icc-color(Display, 0.72198486, 0.81999207, 0.9059906);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333" />
-    <path
        id="path284"
        d="m 287.04,274.408 h 10.703 V 192.431 H 287.04 Z"
        style="fill:#ffffff icc-color(Display, 1, 1, 1);fill-opacity:1;fill-rule:nonzero;stroke:none"
