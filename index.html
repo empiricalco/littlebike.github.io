@@ -5,35 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Little Bike Communications</title>
   <style>
-    /* 1. Reset + painted background fallback */
+    /* 1. Full-screen page painted in the banner’s mid-blue */
     html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #bee0f0; /* your branded light‑blue */
+      margin: 0; padding: 0;
+      width: 100vw; height: 100vh;
+      background-color: #9EC5E4;  /* ← adjust this to your exact banner-blue */
       overflow: hidden;
       font-family: sans-serif;
     }
 
-    /* 2. Hero using your original PNG banner */
+    /* 2. Hero using your original bitmap banner */
     .hero {
       position: relative;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       background: url('lbc_background.png') no-repeat center center;
-      background-size: cover;        /* full‑bleed on desktop/tablet */
+      background-size: cover;
     }
 
-    /* 3. On phones, scale the full logo into view */
+    /* 3. Phone fallback: ensure the whole logo shows */
     @media (max-width: 480px) {
       .hero {
-        background-size: contain;    /* show the whole banner */
+        background-size: contain;
         background-position: center center;
       }
     }
 
-    /* 4. Contact bar (fixed, responsive) */
+    /* 4. Contact bar (auto-width, true centered) */
     .contact {
       position: fixed;
       bottom: calc(1rem + env(safe-area-inset-bottom));
@@ -41,12 +38,13 @@
       transform: translateX(-50%);
       display: flex;
       gap: 16px;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
       padding: 8px 16px;
       border-radius: 24px;
       align-items: center;
       z-index: 10;
-      max-width: 90vw;
+      width: auto;       /* shrink-to-fit content */
+      white-space: nowrap;
     }
     .contact a {
       display: flex;
@@ -56,12 +54,11 @@
       font-size: 14px;
     }
     .contact img {
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       margin-right: 6px;
     }
 
-    /* Tablet shrink */
+    /* 5. Tablet tweaks */
     @media (max-width: 768px) {
       .contact {
         gap: 12px;
@@ -71,28 +68,25 @@
       .contact img { width: 18px; height: 18px; }
     }
 
-    /* Stack icons on small phones */
+    /* 6. Mobile: stack & icon-only */
     @media (max-width: 480px) {
       .contact {
         flex-direction: column;
         gap: 8px;
         padding: 4px 8px;
+        max-width: 90vw;
       }
-      .contact a span {
-        display: none;
-      }
+      .contact a span { display: none; }
     }
   </style>
 </head>
 <body>
-  <!-- Full‑screen hero -->
   <div class="hero"></div>
 
-  <!-- Contact bar unchanged -->
   <div class="contact">
     <a href="https://wa.me/61437189338" target="_blank">
       <img src="icons/whatsapp.svg" alt="WhatsApp">
-      <span>+61 437 189 338</span>
+      <span>+61 437 189 338</span>
     </a>
     <a href="mailto:hello@littlebike.com.au">
       <img src="icons/email.svg" alt="Email">
