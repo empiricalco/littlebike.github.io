@@ -1,73 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Little Bike Communications</title>
+  …
   <style>
-    /* Full‑viewport flex container */
-    html, body {
-      margin: 0; padding: 0;
-      width: 100vw; height: 100vh;
-      background-color: #bee0f0;       /* your light blue */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+    /* … your other styles … */
 
-    /* Centered SVG logo */
+    /* Logo */
     .logo {
-      width: 60vw;                     /* scale to viewport */
-      max-width: 400px;                /* cap on large screens */
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 60vw;
+      max-height: 60vh;
+      width: auto;
       height: auto;
+      z-index: 1;
     }
 
-    /* Contact bar as before */
-    .contact {
-      position: fixed;
-      bottom: calc(1rem + env(safe-area-inset-bottom));
-      left: 50%; transform: translateX(-50%);
-      display: flex; gap: 16px;
-      background: rgba(255,255,255,0.8);
-      padding: 8px 16px;
-      border-radius: 24px;
-      z-index: 10;
+    /* Contact bar icons */
+    .contact img {
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
     }
-    .contact a { /* …your same styles…*/ }
-    .contact img { /* … */ }
 
-    @media (max-width: 480px) {
-      .contact {
-        flex-direction: column;
-        max-width: 90vw;
-        padding: 4px 8px;
-      }
-      .contact a span { display: none; }
-    }
+    /* … rest of your contact bar CSS … */
   </style>
 </head>
 <body>
-  <!-- SVG logo in the centre -->
+  <div class="hero"></div>
+
+  <!-- Correct logo here: -->
   <img class="logo" src="icons/logo.svg" alt="Little Bike Communications logo">
 
-  <!-- Contact bar -->
   <div class="contact">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/61437189338" target="_blank">
-      <img src="icons/whatsapp.svg" alt="WhatsApp">
-      <span>+61 437 189 338</span>
-    </a>
-    <!-- Email -->
-    <a href="mailto:hello@littlebike.com.au">
-      <img src="icons/email.svg" alt="Email">
-      <span>hello@littlebike.com.au</span>
-    </a>
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/company/littlebike" target="_blank">
-      <img src="icons/linkedin.svg" alt="LinkedIn">
-      <span>LinkedIn</span>
-    </a>
+    <a href="…"><img src="icons/whatsapp.svg" alt=""><span>…</span></a>
+    <!-- … -->
   </div>
 </body>
 </html>
