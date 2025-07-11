@@ -4,61 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Little Bike Communications</title>
+  <!-- Preload the hero background -->
   <link rel="preload" as="image" href="lbc_background.png">
   <style>
-    /* Reset */
+    /* Reset + fallback background */
     html, body {
-      margin: 0; padding: 0;
-      width: 100vw; height: 100vh;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #bee0f0; /* match your light‑blue hero */
+      font-family: sans-serif;
       overflow: hidden;
     }
-    /* Hero container */
+
+    /* Hero full‑bleed */
     .hero {
       position: relative;
-      width: 100%; height: 100%;
-      background-color: #fff;
+      width: 100%;
+      height: 100vh;
+      background: url('lbc_background.png') no-repeat center center;
+      background-size: cover;        /* always fill */
+      background-position: 50% 40%;  /* nudge focal point */
     }
-    /* Responsive <img> */
-    .hero img {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      /* Always fit inside viewport */
-      max-width: 100vw;
-      max-height: 100vh;
-      width: auto;
-      height: auto;
-    }
-    /* Overlay contact bar */
+
+    /* Contact bar */
     .contact {
-      position: absolute;
-      bottom: 20px; left: 50%;
+      position: fixed; /* stick to viewport */
+      bottom: calc(1rem + env(safe-area-inset-bottom));
+      left: 50%;
       transform: translateX(-50%);
-      display: flex; gap: 16px;
+      display: flex;
+      gap: 16px;
       background: rgba(255,255,255,0.8);
       padding: 8px 16px;
       border-radius: 24px;
       align-items: center;
+      z-index: 10;
     }
     .contact a {
-      display: flex; align-items: center;
-      text-decoration: none; color: #333;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
       font-size: 14px;
     }
     .contact img {
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       margin-right: 6px;
     }
+
     /* Tablet tweaks */
     @media (max-width: 768px) {
-      .contact { bottom: 10px; gap: 12px; padding: 6px 12px; }
+      .contact {
+        bottom: calc(0.5rem + env(safe-area-inset-bottom));
+        gap: 12px;
+        padding: 6px 12px;
+      }
       .contact a { font-size: 12px; }
       .contact img { width: 18px; height: 18px; }
     }
-    /* Mobile tweaks + safe-area */
-    @media (max-width: 480px) {
+
+    /* Only stack on very small phones */
+    @media (max-width: 360px) {
       .contact {
-        bottom: calc(1rem + env(safe-area-inset-bottom));
         flex-direction: column;
         gap: 8px;
         padding: 4px 8px;
@@ -69,19 +79,18 @@
 </head>
 <body>
   <div class="hero">
-    <!-- This is your “background” image, but now a real img -->
-    <img src="lbc_background.png" alt="Little Bike Communications logo">
-
-    <!-- Contact bar -->
     <div class="contact">
+      <!-- WhatsApp -->
       <a href="https://wa.me/61437189338" target="_blank">
         <img src="icons/whatsapp.svg" alt="WhatsApp">
-        <span>+61 437 189 338</span>
+        <span>+61 437 189 338</span>
       </a>
+      <!-- Email -->
       <a href="mailto:hello@littlebike.com.au">
         <img src="icons/email.svg" alt="Email">
         <span>hello@littlebike.com.au</span>
       </a>
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/company/littlebike" target="_blank">
         <img src="icons/linkedin.svg" alt="LinkedIn">
         <span>LinkedIn</span>
